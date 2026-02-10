@@ -286,11 +286,7 @@ export default function Login() {
                     (error ? "border-destructive focus-visible:ring-destructive" : "focus-visible:ring-primary")
                   }
                 />
-                {error ? (
-                  <p className="mt-2 text-sm text-destructive">⚠️ {error}</p>
-                ) : (
-                  <p className="mt-2 text-xs text-muted-foreground">Celular: (11) 99999-9999 | Senha: admin123</p>
-                )}
+                {error && <p className="mt-2 text-sm text-destructive">⚠️ {error}</p>}
               </div>
 
               <div className="mt-8">
