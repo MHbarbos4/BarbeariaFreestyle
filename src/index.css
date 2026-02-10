@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Urban Heroes";
+  src: url("/fonts/Urban_Heroes.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Docallisme On Street";
+  src: url("/fonts/DOCALLISME_ON_STREET.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Barbearia Freestyle — Street/Urbano, minimalista e moderno
+       Regras: fundo preto suave (não puro) + branco + amarelo/vermelho/verde */
+    --background: 0 0% 6.5%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Brand */
+    --brand-yellow: 45 81% 46%;  /* #D4A017 - dourado queimado */
+    --brand-red: 351 67% 47%;    /* #C52840 - vermelho escuro/vinho */
+    --brand-green: 152 58% 27%;  /* #1C6B42 - verde escuro floresta */
+
+    --primary: var(--brand-yellow);
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 70%;
+
+    /* Surface para cards/boxes (equiv. #1a1a1a) */
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: var(--brand-red);
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 16%;
+    --input: 0 0% 14%;
+    --ring: var(--brand-yellow);
+
+    --radius: 0.75rem;
+    --radius-tight: 0.25rem;
+
+    --sidebar-background: 0 0% 4%;
+
+    --sidebar-foreground: 0 0% 92%;
+
+    --sidebar-primary: var(--brand-yellow);
+
+    --sidebar-primary-foreground: 0 0% 0%;
+
+    --sidebar-accent: 0 0% 10%;
+
+    --sidebar-accent-foreground: 0 0% 100%;
+
+    --sidebar-border: 0 0% 14%;
+
+    --sidebar-ring: var(--brand-yellow);
+
+    /* Surfaces & depth */
+    --shadow-soft: 0 10px 30px -18px hsl(0 0% 0% / 0.9);
+    --shadow-card: 0 12px 40px -28px hsl(0 0% 0% / 0.95);
+  }
+
+  .dark {
+    /* Mantemos a mesma identidade no modo escuro (fundo preto suave) */
+    --background: 0 0% 6.5%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: var(--brand-yellow);
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: var(--brand-red);
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 16%;
+    --input: 0 0% 14%;
+    --ring: var(--brand-yellow);
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 92%;
+    --sidebar-primary: var(--brand-yellow);
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 14%;
+    --sidebar-ring: var(--brand-yellow);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Fonte street para títulos (não usar no nome/logo da barbearia) */
+  h1,
+  h2,
+  h3 {
+    font-family: "Urban Heroes", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans",
+      sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Masonry helpers (react-masonry-css) */
+  .masonry-grid {
+    display: flex;
+    margin-left: -12px;
+    width: auto;
+  }
+  .masonry-grid_column {
+    padding-left: 12px;
+    background-clip: padding-box;
+  }
+  .masonry-grid_column > * {
+    margin-bottom: 12px;
+  }
+}
