@@ -22,8 +22,8 @@ type Tab = "camisetas" | "produtos";
 type SubFilter = "todos" | "cabelo" | "barba" | "bebida" | "comida";
 
 const contactLinks = {
-  whatsapp: "https://wa.me/5511999999999",
-  maps: "https://www.google.com/maps?q=Rua%20Exemplo%2C%20123%2C%20S%C3%A3o%20Paulo%20-%20SP",
+  whatsapp: "https://wa.me/5515991347226",
+  maps: "https://www.google.com/maps/search/?api=1&query=Rua+João+Marcolino,+17,+São+Conrado,+Sorocaba,+SP",
 };
 
 const formatBRL = (value: number) =>
