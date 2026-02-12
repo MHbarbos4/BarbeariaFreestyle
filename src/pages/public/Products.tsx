@@ -19,7 +19,7 @@ import {
 } from "@/services/api/productService";
 
 type Tab = "camisetas" | "produtos";
-type SubFilter = "todos" | "cabelo" | "barba";
+type SubFilter = "todos" | "cabelo" | "barba" | "bebida" | "comida";
 
 const contactLinks = {
   whatsapp: "https://wa.me/5511999999999",
@@ -284,7 +284,7 @@ export default function Products() {
                   <div className="flex gap-4">
                     <div className="w-1 rounded bg-brand-green" aria-hidden />
                     <div>
-                      <p className="text-sm font-extrabold tracking-[0.16em] text-brand-green">💈 PRODUTOS PARA CABELO E BARBA</p>
+                      <p className="text-sm font-extrabold tracking-[0.16em] text-brand-green">💈 PRODUTOS DA BARBEARIA</p>
                       <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                         <li>• Venda APENAS presencial na barbearia</li>
                         <li>• Estoque limitado</li>
@@ -296,12 +296,14 @@ export default function Products() {
 
                 {/* SUB-FILTROS */}
                 <div className="mb-10 flex w-full justify-center">
-                  <div className="flex gap-3">
+                  <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
                     {(
                       [
                         { key: "todos", label: "TODOS" },
                         { key: "cabelo", label: "CABELO" },
                         { key: "barba", label: "BARBA" },
+                        { key: "bebida", label: "BEBIDA" },
+                        { key: "comida", label: "COMIDA" },
                       ] as const
                     ).map((t) => (
                       <button
@@ -309,7 +311,7 @@ export default function Products() {
                         type="button"
                         onClick={() => setSubFilter(t.key)}
                         className={
-                          "rounded-lg px-5 py-3 text-xs font-extrabold tracking-[0.16em] transition-colors duration-300 " +
+                          "rounded-lg px-4 py-2 sm:px-5 sm:py-3 text-xs font-extrabold tracking-[0.16em] transition-colors duration-300 " +
                           subTabClass(subFilter === t.key)
                         }
                       >
