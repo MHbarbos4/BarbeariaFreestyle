@@ -61,7 +61,7 @@ const productFormSchema = z.object({
     .min(1)
     .max(6)
     .refine((v) => /^\d+$/.test(v), "Estoque deve ser um número"),
-  subcategory: z.enum(["cabelo", "barba"]),
+  subcategory: z.enum(["cabelo", "barba", "bebida", "comida"]),
 });
 
 const tshirtFormSchema = z.object({
@@ -111,7 +111,7 @@ export default function ManageProducts() {
     description: "",
     price: "",
     stock: "",
-    subcategory: "cabelo" as "cabelo" | "barba",
+    subcategory: "cabelo" as "cabelo" | "barba" | "bebida" | "comida",
   });
 
   // Form state camiseta
@@ -716,6 +716,8 @@ export default function ManageProducts() {
                   <SelectContent>
                     <SelectItem value="cabelo">Cabelo</SelectItem>
                     <SelectItem value="barba">Barba</SelectItem>
+                    <SelectItem value="bebida">Bebida</SelectItem>
+                    <SelectItem value="comida">Comida</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -799,6 +801,8 @@ export default function ManageProducts() {
                   <SelectContent>
                     <SelectItem value="cabelo">Cabelo</SelectItem>
                     <SelectItem value="barba">Barba</SelectItem>
+                    <SelectItem value="bebida">Bebida</SelectItem>
+                    <SelectItem value="comida">Comida</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

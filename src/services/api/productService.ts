@@ -18,7 +18,7 @@ export type ShopProduct = {
   image: string;
   stock: number;
   category: "produto";
-  subcategory: "cabelo" | "barba";
+  subcategory: "cabelo" | "barba" | "bebida" | "comida";
   isActive: boolean;
 };
 
